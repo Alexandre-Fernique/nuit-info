@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 
 import './App.css';
 import GenericCard from './components/generic-card';
@@ -7,9 +7,11 @@ import room from "./assets/room.jpg"
 import PointOfInterest from "./model/PointOfInterest";
 import CardImg from './components/card-img';
 import CardInput from './components/card-input';
-import { Stack } from '@mui/system';
 import { Grid } from '@mui/material';
 import Card from './models/card';
+import GameContext, { GameContextType } from './context/game-context';
+import mockScenario from './mocks/mockScenario';
+import { Scenario } from './types/scenario';
 
 const compImg = (<CardImg img_link='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'></CardImg>)
 const compInput = (<CardInput></CardInput>)
@@ -20,28 +22,49 @@ const component2 = (<GenericCard card={card2}/>)
 function App() {
   const items: PointOfInterest[] = [{x: 20, y: 50, width: 100, height: 100, onClick:()=>{ alert("click")}}, {x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}]
 
+  const [scenario, setScenario] = useState<Scenario>(mockScenario);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+
+  const gameContext = useMemo<GameContextType>(() => ({
+    scenario: undefined,
+    currentStep: 0,
+    moveToNextStep: () => setCurrentStep((step) => step + 1)
+  }), []);
+
   return (
 
-    <div className="App">
-      <Screen items={items} url={room}></Screen>
+    <GameContext.Provider value={gameContext}>
+      <div className="App">
+      {currentStep >= scenario.steps.length
+       ?
+        <div>
+          Vous avez fini le jeu!
+        </div>
+        : <>
+          <Screen items={items} url={room}></Screen>
 
-      <Grid container spacing={2} direction="row">
-        <Grid item xs={3}>
-        {
-          component
-        }
-        </Grid>
-        <Grid item xs={3}>
-        {
-          component2
-        }
-        </Grid>
+          <Grid container spacing={2} direction="row">
+            <Grid item xs={3}>
+            {
+              component
+            }
+            </Grid>
+            <Grid item xs={3}>
+            {
+              component2
+            }
+            </Grid>
 
-      </Grid>
+          </Grid>
+        </>
+      }
       
-    </div>
-  );
-}
+      <div>{currentStep}</div>
+      </div>
+    </GameContext.Provider>
 
+    );
+  }
 
+    
 export default App;
