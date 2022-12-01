@@ -1,4 +1,4 @@
-import PointOfInterest from "../model/PointOfInterest";
+import PointOfInterest from "../models/PointOfInterest"
 
 
 type ButtonProps={

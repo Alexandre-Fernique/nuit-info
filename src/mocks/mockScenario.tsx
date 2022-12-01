@@ -1,37 +1,31 @@
 import ActionCard from "../components/action-card-test";
+import Card from "../models/card";
 import {Scenario, Step } from "../types/scenario";
+
+const mockCard = new Card(
+  1, "Clés", "Oh you found a card", 'indice', (<ActionCard></ActionCard>), 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+)
 
 const mockStepOne: Step = {
   cards: [
-  {
-    title: "ClueCard1",
-    description: "Oh you found a card",
-    clue: "You are dumb!",
-    children: (<ActionCard></ActionCard>)
-  },
-  {
-    title: "ClueCard2",
-    description: "Oh you found another card",
-    clue: "You are even dumber!",
-    children: (<ActionCard></ActionCard>)
-  }
+    new Card(
+      1, "Clés", "Oh you found a card", 'indice', (<ActionCard></ActionCard>),'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+    ),
+    new Card(
+      2, "Coffre", "Oh you found a card", 'indice', (<ActionCard></ActionCard>), 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+    )
 ]}
 
 const mockStepTwo: Step = {
   cards: [
-  {
-    title: "ClueCard3",
-    description: "Oh you found a card",
-    clue: "You are dumb!",
-    children: (<ActionCard></ActionCard>)
-  },
-  {
-    title: "ClueCard4",
-    description: "Oh you found another card",
-    clue: "You are even dumber!",
-    children: (<ActionCard></ActionCard>)
-  }
-]}
+    new Card(
+      3, "ClueCard3", "Oh you found a card", 'indice', (<ActionCard></ActionCard>), 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+    ),
+    new Card(
+      4, "ClueCard4", "Oh you found a card", 'indice', (<ActionCard></ActionCard>), 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+    )
+  ]
+}
 
 const mockSteps: Step[] = [
   mockStepOne,
@@ -42,4 +36,4 @@ const mockScenario: Scenario = {
   steps: mockSteps,
 }
 
-export default mockScenario
+export {mockScenario, mockCard}

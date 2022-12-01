@@ -1,4 +1,4 @@
-import PointOfInterest from "../model/PointOfInterest";
+import PointOfInterest from "../models/PointOfInterest";
 import ScreenButton from "./ScreenButton";
 
 type ScreenProps={
@@ -13,7 +13,7 @@ export default function Screen({url, items}: ScreenProps){
 
 
     return(
-        <div className="border-2 border-black h-[50vh] w-1/2 mx-auto top-1/2 translate-y-1/2 relative">
+        <div className="border-2 border-black h-[80vh] w-full mx-auto relative">
             <img src={url} className="absolute h-full w-full object-cover" alt={"Point d'intêret"}></img>
             {items.map((item) =>{
 

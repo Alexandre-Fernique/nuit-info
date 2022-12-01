@@ -1,10 +1,4 @@
-
-export type Card = {
-  title: string
-  description: string
-  clue: string;
-  children: JSX.Element
-}
+import Card from "../models/card"
 
 export type Step = {
   cards: Card[],
