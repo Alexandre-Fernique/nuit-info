@@ -5,15 +5,43 @@ import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
 import room from "./assets/room.jpg"
 import PointOfInterest from "./model/PointOfInterest";
+import CardImg from './components/card-img';
+import CardInput from './components/card-input';
+import { Stack } from '@mui/system';
+import { Grid } from '@mui/material';
+import Card from './models/card';
 
-const component = (<GenericCard title="test" description='test'><div>r</div></GenericCard>)
+const compImg = (<CardImg img_link='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'></CardImg>)
+const compInput = (<CardInput></CardInput>)
+const card1 = new Card(1, "Card 1", "This is card 1", "Indice 1", compImg);
+const card2 = new Card(2, "Card 2", "This is card 2", "Indice 2", compInput);
+const component = (<GenericCard card={card1}/>)
+const component2 = (<GenericCard card={card2}/>)
 function App() {
   const items: PointOfInterest[] = [{x: 20, y: 50, width: 100, height: 100, onClick:()=>{ alert("click")}}, {x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}]
 
   return (
+
+    <div className="App">
       <Screen items={items} url={room}></Screen>
 
+      <Grid container spacing={2} direction="row">
+        <Grid item xs={3}>
+        {
+          component
+        }
+        </Grid>
+        <Grid item xs={3}>
+        {
+          component2
+        }
+        </Grid>
+
+      </Grid>
+      
+    </div>
   );
 }
+
 
 export default App;
