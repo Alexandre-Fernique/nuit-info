@@ -24,13 +24,12 @@ export default function GenericCard(props:{
 
   return (
     <Paper elevation={1}>
-      <Stack height="130px" padding="5px" direction='column' spacing='10px' border='1px black solid' border-radius="5px">
+      <Stack  padding="5px" direction='column' spacing='10px' sx={{border:'1.5px black solid', borderRadius:"5px", boxShadow: 5}}>
         <Stack direction='row' width='100%' justifyContent='right' >
-
+          <Stack direction='row' width='100%' justifyContent='flex-start' >
+            <Typography fontSize='20px' variant='subtitle2' sx={{fontFamily: 'Quicksand', fontWeight: 'bold'}}>{card.title}</Typography>
+          </Stack>
           <Stack width='20%' direction='row' justifyContent='space-between'>
-            <Stack justifyContent='center'>
-              {card.num}
-            </Stack>
             
             <Button onClick={handleClick}><HelpOutlineIcon/></Button>
             <Popover
@@ -46,13 +45,9 @@ export default function GenericCard(props:{
             </Popover>
           </Stack>
         </Stack>
-        <Stack direction='row' width='100%' justifyContent='center' >
-          <Typography fontSize='20px'>{card.title}</Typography>
-        </Stack>
-        <Stack direction='row' width='100%' justifyContent='center' >{card.description}</Stack>
-        <Stack direction='row' width='100%' justifyContent='center' >
-        </Stack>
         {card.children}
+        <Stack direction='row' width='100%' justifyContent='center'>
+          <Typography align='justify' sx={{fontFamily: 'Quicksand', fontSize: '14px'}}>{card.description}</Typography></Stack>
       </Stack>
       
     </Paper>

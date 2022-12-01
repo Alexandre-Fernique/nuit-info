@@ -14,10 +14,11 @@ import { Scenario } from './types/scenario';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 
-const compImg = (<CardImg img_link='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'></CardImg>)
+const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
 const compInput = (<CardInput></CardInput>)
-const card1 = new Card(1, "Card 1", "This is card 1", "Indice 1", compImg,'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
-const card2 = new Card(2, "Card 2", "This is card 2", "Indice 2", compInput,'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
+
+const card1 = new Card(1, "Card 1", "This is card 1, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "Indice 1", compImg, 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
+const card2 = new Card(2, "Card 2", "This is card 2 ", "Indice 2", compInput, 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
 const component = (<GenericCard card={card1}/>)
 const component2 = (<GenericCard card={card2}/>)
 
