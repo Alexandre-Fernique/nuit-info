@@ -25,6 +25,7 @@ import CableMachine from "../components/CableMachine";
 import FileLockCard from "../components/file-lock-card";
 import Quiz from "../components/Quiz";
 import lockImg from "../assets/lock.jpeg"
+import phoneImg from "../assets/phone_img.jpg"
 
 import BookCard from "../components/book-card";
 
@@ -67,9 +68,9 @@ const IllenessTokenListComponent = (<GenericCard card={illenessTokenListCard} />
 const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div></div>, livre);
 const bookComponent = (<BookCard card={bookCard}/>)
 
-const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Trouvez la maladie associée aux symptômes suivants : \n Avant poussée : apparition de brûlures, d’irritations ou de picotements. Pendant poussée : apparition de vésicules (boutons) ou ulcères inflammés au niveau génital, anal, ou autour de ces zones, qui cicatrisent et disparaissent en 8 à 15 jours.", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, fichierVerouille)
+const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Trouvez la maladie associée aux symptômes suivants : \n Avant poussée : apparition de brûlures, d’irritations ou de picotements. Pendant poussée : apparition de vésicules (boutons) ou ulcères inflammés au niveau génital, anal, ou autour de ces zones, qui cicatrisent et disparaissent en 8 à 15 jours.", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, lockImg)
 
-const endCard = new Card( 15, "Téléphone", "Vous avez trouvez toutes les informations, vous pouvez maintenant répondre à votre copine.", "Pas d'indice",  <Quiz/>, chestImg)
+const endCard = new Card( 15, "Téléphone", "Vous avez trouvez toutes les informations, vous pouvez maintenant répondre à votre copine.", "Pas d'indice",  <Quiz/>, phoneImg)
 
 
 export {bookCard, illenessTokenListCard, lockFileCard,drawerCardEntier, endCard, chargerCard, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
