@@ -1,17 +1,23 @@
 import { createContext } from 'react';
 import Card from '../models/card';
-import { Scenario } from '../types/scenario';
+import PointOfInterest from '../models/PointOfInterest';
 
 export interface GameContextType {
-  scenario?: Scenario
   currentStep: number
+  currentInventory: Card[]
+  pointsOfInterest: PointOfInterest[]
+  setCurrentInventory: React.Dispatch<React.SetStateAction<Card[]>>
+  setPointsOfInterest: React.Dispatch<React.SetStateAction<PointOfInterest[]>>
   openCard: (card:Card)=>void
   moveToNextStep: () => void
 }
 
 const GameContext = createContext<GameContextType>({
-  scenario: undefined,
   currentStep: 0,
+  currentInventory: [],
+  pointsOfInterest: [],
+  setPointsOfInterest: () => {},
+  setCurrentInventory: () => {},
   openCard: () => {},
   moveToNextStep: () => {}
 });
