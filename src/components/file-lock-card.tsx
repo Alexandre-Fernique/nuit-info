@@ -19,6 +19,6 @@ export default function FileLockCard(
   }
 
   return (
-    <InputChildren codeSolution="1234" onSuccess={onSuccess}></InputChildren>
+    <InputChildren codeSolution="Herpès génital" onSuccess={onSuccess}></InputChildren>
   )
 }
