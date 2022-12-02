@@ -21,6 +21,7 @@ import SuccessDialog from './components/success-dialog';
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BookCard from './components/book-card';
 import CableMachine from './components/CableMachine';
+import Quiz from './components/Quiz';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)

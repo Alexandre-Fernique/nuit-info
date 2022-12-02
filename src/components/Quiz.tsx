@@ -1,4 +1,4 @@
-import {Button} from "@mui/material";
+import {Button, Typography} from "@mui/material";
 import React from "react";
 import GameContext from "../context/game-context";
 
@@ -11,8 +11,10 @@ type QuizProps = {
 export default function Quiz( ) {
     const { moveToNextStep } = React.useContext(GameContext)
     const {indexSolution, question} =  {
-        indexSolution: 2,
-        question: ["response1", "reponse2", "reponse3"]
+        indexSolution: 1,
+        question: ["T’inquiète, il y a peu de chances que tu attrape une IST de toutes façons.",
+         "Va aux urgences ! Ils peuvent te donner un traitement jusqu’à 48h après l’exposition au risque.",
+          "Une seule exposition ce n’est pas grave, il en faut plusieurs pour que ce soit vraiment risqué."]
     }
 
     const handleOnClick = (index: number) => {
@@ -29,6 +31,7 @@ export default function Quiz( ) {
             {question.map((item, index) => {
                 return (
                     <div key={index}>
+                        <Typography>Quel message envoies-tu à ton amie ?</Typography>
                         <Button variant="contained" onClick={()=>handleOnClick(index)}>{item}</Button>
                     </div>)
             })
