@@ -13,6 +13,7 @@ import {mockScenario} from './mocks/mockScenario';
 import { Scenario } from './types/scenario';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
+import GameTimer from './components/game-timer';
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
 const compInput = (<CardInput></CardInput>)
@@ -47,6 +48,7 @@ function App() {
         </Dialog>)
       }
       <Stack direction='column' paddingX={10} paddingTop={2}>
+        <GameTimer durationInMinutes={15}></GameTimer>
         {currentStep >= scenario.steps.length
         ?
           <div>
