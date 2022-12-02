@@ -5,15 +5,14 @@ import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
 import room from "./assets/room.jpg"
 import CardImg from './components/card-img';
-import CardInput from './components/input-children';
 import { Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';
 import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
-import InventoryCard from './components/inventory-card';
-import InputChildren from './components/input-children';
+import { drawerComponent, keyCard } from './data/cards';
+
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
 //const compInput = (<InputChildren></InputChildren>)
@@ -66,11 +65,13 @@ function App() {
           <div>
             Vous avez fini le jeu!
           </div>
-          : 
+          :
+
           <Stack direction='column' spacing={2}>
               <Screen items={pointsOfInterest} url={room}></Screen>
               <Inventory cards={currentInventory}></Inventory>
-            </Stack>
+              {drawerComponent}
+          </Stack>
         }
       </Stack>
     </GameContext.Provider>

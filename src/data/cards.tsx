@@ -1,5 +1,6 @@
 
 import CardImg from "../components/card-img";
+import DependentCard from "../components/dependent-cards";
 import GenericCard from "../components/generic-card";
 import Card from "../models/card";
 
@@ -21,10 +22,16 @@ const memoCard = new Card(8, "Mémo", "https://www.sida-info-service.org/, \n ht
 const memoComponent = (<GenericCard card={memoCard}/>)
 
 const keyImg = (<CardImg img_link='../assets/images/key.png'></CardImg>)
-const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", keyImg, '../assets/images/key.png');
+export const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", keyImg, '../assets/images/key.png');
 const keyComponent = (<GenericCard card={keyCard}/>)
 
 const computerImg = (<CardImg img_link='../assets/images/computer.png'></CardImg>)
 const computerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", keyImg, '../assets/images/computer.png');
 const computerComponent = (<GenericCard card={computerCard}/>) 
+
+const drawerCard = (<DependentCard list_card={9} text="string" onSuccess={() => {
+    alert("ca marche")
+}}/>)
+const drawerCardEntier = new Card(1, "Coffre", "Decsription ?", "Il ne sert à rien sans batterie...", drawerCard, '../assets/images/computer.png');
+export const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
