@@ -26,4 +26,5 @@ const keyComponent = (<GenericCard card={keyCard}/>)
 
 const computerImg = (<CardImg img_link='../assets/images/computer.png'></CardImg>)
 const computerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", keyImg, '../assets/images/computer.png');
-const computerComponent = (<GenericCard card={computerCard}/>)
+const computerComponent = (<GenericCard card={computerCard}/>) 
+
