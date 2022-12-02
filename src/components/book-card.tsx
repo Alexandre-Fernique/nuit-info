@@ -28,7 +28,6 @@ export default function BookCard(props:{
 
 
     const onSuccess = () => {
-        alert("Vous avez trouvé une clef cachée dans le livre !")
         moveToNextStep()
         const newInventory = currentInventory.filter((item) => item.num !== 7)
         // TODO add card key and card memo 

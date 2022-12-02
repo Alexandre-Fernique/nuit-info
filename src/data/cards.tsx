@@ -21,6 +21,7 @@ import GameContext from "../context/game-context";
 import React from "react";
 import definitionImg from "../assets/definition.png"
 import CableMachine from "../components/CableMachine";
+import FileLockCard from "../components/file-lock-card";
 
 import BookCard from "../components/book-card";
 
@@ -53,16 +54,18 @@ const chargerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
 
-const computerOnCard = new Card( 11, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, computer_locked)
+const computerOnCard = new Card( 11, "Ordinateur verrouillé", "IST bactérienne connue sous les surnoms de « chaude-pisse» ou « chtouille ». (Tout contact sexuel peut mener à sa transmission)", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, computer_locked)
 
 const definitionCard = new Card( 12, "Mémo", "Un nouveau mémo", "Faite attention aux couleurs", definitionImg, definitionImg)
 
 const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies_tokens.png'></CardImg>)
-const IllenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
-const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
+const illenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
+const IllenessTokenListComponent = (<GenericCard card={illenessTokenListCard} />)
 
 const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div></div>, livre);
 const bookComponent = (<BookCard card={bookCard}/>)
 
+const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Donner les symptomes", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, chestImg)
 
-export {bookCard, IllenessTokenListCard, drawerCardEntier, chargerCard, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
+
+export {bookCard, illenessTokenListCard, lockFileCard,drawerCardEntier, chargerCard, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}

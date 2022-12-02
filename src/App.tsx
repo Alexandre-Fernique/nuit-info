@@ -16,7 +16,7 @@ import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
 import InventoryCard from './components/inventory-card';
 import InputChildren from './components/input-children';
-import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
+import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, illenessTokenListCard, lockFileCard } from './data/cards';
 import SuccessDialog from './components/success-dialog';
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BookCard from './components/book-card';
@@ -63,13 +63,13 @@ function App() {
   const secondPointsOfInterest: PointOfInterest[] = [
     {id: 1, x: 63, y: 25, width: 60, height: 70, onClick:()=>{ 
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
-      setCurrentInventory((curInv) => [...curInv, eiffelTowerCard])
-      setCardOpened(eiffelTowerCard);
+      setCurrentInventory((curInv) => [...curInv, illenessTokenListCard])
+      setCardOpened(illenessTokenListCard);
      }}, 
     {id: 2, x: 91, y: 96, width: 65, height: 60,onClick:()=>{ 
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
-      setCurrentInventory((curInv) => [...curInv, chestCard])
-      setCardOpened(chestCard);
+      setCurrentInventory((curInv) => [...curInv, lockFileCard])
+      setCardOpened(lockFileCard);
      }}
   ]
 
