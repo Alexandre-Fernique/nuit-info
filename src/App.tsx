@@ -14,7 +14,9 @@ import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
-import { drawerCardEntier, computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
+import InventoryCard from './components/inventory-card';
+import InputChildren from './components/input-children';
+import { drawerCardEntier, drawerComponent, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -54,7 +56,7 @@ function App() {
      }}
   ]
 
-  const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
+  const [currentInventory, setCurrentInventory] = useState<Card[]>([keyCard]);
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
