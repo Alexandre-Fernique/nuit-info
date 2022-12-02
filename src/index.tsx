@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import KonamiCode from "./components/KonamiCode";
+import RickRoll from "./components/RickRoll";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+      <RickRoll></RickRoll>
       <KonamiCode></KonamiCode>
     <App />
   </React.StrictMode>
