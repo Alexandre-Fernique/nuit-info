@@ -10,6 +10,21 @@ type SuccessDialogProps = {
 export default function SuccessDialog({ cards }: SuccessDialogProps) {
   const { setIsSuccessDialogVisible, currentStep } = useContext(GameContext)
 
+  const downloadPDF = () => {
+    // using Java Script method to get PDF file
+    fetch('infectionvih.pdf').then(response => {
+        response.blob().then(blob => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            // Setting various property values
+            let alink = document.createElement('a');
+            alink.href = fileURL;
+            alink.download = 'infectionvih.pdf';
+            alink.click();
+        })
+    })
+}
+
   return (
     <>
     { currentStep === 1 && 
@@ -61,8 +76,11 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
-        <Typography>Vous avez décodé le fichier vous pouvez maintenant le lire. </Typography>
-        <Button onClick={() => { setIsSuccessDialogVisible(false) }} variant="contained">Cool !</Button>
+        <Typography>Vous avez décodé le fichier vous pouvez maintenant le lire. Vous avez désormais toutes les informations, prenez votre téléphone pour répondre à votre amie.</Typography>
+        <Button onClick={() => { 
+          downloadPDF()
+          setIsSuccessDialogVisible(false)
+           }} variant="contained">Télécharger le PDF</Button>
       </Stack>
     </Box>
     }
