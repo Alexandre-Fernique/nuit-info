@@ -1,6 +1,6 @@
 import {useState} from "react";
 import ColorButton from "./ColorButton";
-import {Button} from "@mui/material";
+import {Alert, Button} from "@mui/material";
 import GameContext from "../context/game-context";
 import { computerOnCard } from "../data/cards";
 import React from "react";
@@ -10,6 +10,7 @@ export default function CableMachine() {
     const [red, setRed] = useState([]);
     const [blue, setBlue] = useState([]);
     const [green, setGreen] = useState([]);
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     const validSize = (color:string[]) => {
         if(color.length === 1){
@@ -32,6 +33,8 @@ export default function CableMachine() {
                 newInventory.push(computerOnCard)
                 setCurrentInventory(newInventory)            
             }
+        } else {
+            setErrorMessage("Oups ! Ce n'est pas la bonne combinaison...")
         }
 
     }
@@ -39,7 +42,6 @@ export default function CableMachine() {
     return (
         <div className={"flex flex-col gap-4"}>
             <div className={" w-fit flex gap-8 item-center"}>
-
 
 
                     <ColorButton value={"VIH"} setRed={setRed} setBlue={setBlue} setGreen={setGreen}></ColorButton>
@@ -55,6 +57,17 @@ export default function CableMachine() {
 
             </div>
             <div className={""}>
+            {errorMessage && (
+                    <Alert
+                      severity="error"
+                      sx={{ marginBottom: 2 }}
+                      onClose={() => {
+                        setErrorMessage('');
+                      }}
+                    >
+                      {errorMessage}
+                    </Alert>
+                  )}
                 <Button variant="contained" onClick={validate} color="success"> Valider </Button>
             </div>
         </div>

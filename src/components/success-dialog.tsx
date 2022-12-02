@@ -12,7 +12,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
 
   return (
     <>
-    { currentStep === 1 && 
+    { currentStep === 2 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -21,7 +21,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 2 && 
+    { currentStep === 3 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -30,7 +30,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 3 && 
+    { currentStep === 4 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -39,7 +39,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 4 && 
+    { currentStep === 5 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -48,7 +48,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 5 && 
+    { currentStep === 6 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -57,7 +57,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 6 && 
+    { currentStep === 7 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
@@ -66,7 +66,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       </Stack>
     </Box>
     }
-    { currentStep === 6 && 
+    { currentStep === 8 && 
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>

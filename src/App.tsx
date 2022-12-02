@@ -20,6 +20,7 @@ import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCa
 import SuccessDialog from './components/success-dialog';
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BookCard from './components/book-card';
+import CableMachine from './components/CableMachine';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -75,7 +76,7 @@ function App() {
   const [isSuccessDialogVisible, setIsSuccessDialogVisible] = useState<boolean>(false);
   const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
-  const [currentStep, setCurrentStep] = useState<number>(5);
+  const [currentStep, setCurrentStep] = useState<number>(1);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
   const lastStep = 8;
 
@@ -160,6 +161,7 @@ function App() {
           :
 
           <Stack direction='column' spacing={2}>
+            <CableMachine></CableMachine>
               {currentStep < 5 ? (
               <Screen items={pointsOfInterest} url={office}></Screen>
               ) : (
