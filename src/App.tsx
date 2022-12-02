@@ -16,7 +16,7 @@ import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
 import InventoryCard from './components/inventory-card';
 import InputChildren from './components/input-children';
-import { drawerCardEntier, drawerComponent, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
+import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 import SuccessDialog from './components/success-dialog';
 
 

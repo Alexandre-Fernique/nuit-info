@@ -12,7 +12,7 @@ export default function ChestCard(
 
   const onSuccess = () => {
     moveToNextStep()
-    const newInventory = currentInventory.filter((item) => item.num !== 5 && item.num !== 9)
+    const newInventory = currentInventory.filter((item) => item.num !== 4 && item.num !== 1)
     // TODO add card key and card memo 
     newInventory.push(keyCard)
     newInventory.push(memoCard)

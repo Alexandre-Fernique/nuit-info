@@ -53,4 +53,4 @@ const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies
 const IllenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
 const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
 
-export {IllenessTokenListCard, drawerCardEntier, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
+export {IllenessTokenListCard, drawerCardEntier, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
