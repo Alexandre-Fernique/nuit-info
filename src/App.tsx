@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { memo, useMemo, useState } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 
 import './App.css';
 import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
 import office from "./assets/office.png"
 import IllnessTokenList from './assets/liste_maladies_tokens.png'
+import desktop from "./assets/desktop.jpeg"
 import CardImg from './components/card-img';
 import { Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';
@@ -55,7 +56,7 @@ function App() {
 
   const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
-  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [currentStep, setCurrentStep] = useState<number>(1);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
   const lastStep = 3;
 
@@ -68,6 +69,10 @@ function App() {
     openCard: (card:Card)=>setCardOpened(card),
     moveToNextStep: () => setCurrentStep((step) => step + 1)
   }), [currentInventory, currentStep, pointsOfInterest]);
+
+  useEffect(() => {
+    console.log(currentStep)
+  }, [currentStep])
 
   return (
 
@@ -89,7 +94,12 @@ function App() {
           :
 
           <Stack direction='column' spacing={2}>
+              {currentStep < 5 ? (
               <Screen items={pointsOfInterest} url={office}></Screen>
+              ) : (
+                <Screen items={pointsOfInterest} url={desktop}></Screen>
+              )
+            }
               <Inventory cards={currentInventory}></Inventory>
           </Stack>
         }
