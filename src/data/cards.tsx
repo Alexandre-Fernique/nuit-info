@@ -22,6 +22,7 @@ import React from "react";
 import definitionImg from "../assets/definition.png"
 import CableMachine from "../components/CableMachine";
 import FileLockCard from "../components/file-lock-card";
+import Quiz from "../components/Quiz";
 
 import BookCard from "../components/book-card";
 
@@ -66,6 +67,8 @@ const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div>
 const bookComponent = (<BookCard card={bookCard}/>)
 
 const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Donner les symptomes", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, chestImg)
+
+const endCard = new Card( 15, "Téléphone", "Vous avez trouvez toutes les informations, vous pouvez maintenant répondre à votre copine.", "Pas d'indice",  <Quiz/>, chestImg)
 
 
 export {bookCard, illenessTokenListCard, lockFileCard,drawerCardEntier, chargerCard, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}

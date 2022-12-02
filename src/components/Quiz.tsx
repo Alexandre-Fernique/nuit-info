@@ -1,4 +1,6 @@
 import {Button} from "@mui/material";
+import React from "react";
+import GameContext from "../context/game-context";
 
 type QuizProps = {
     indexSolution: number
@@ -6,12 +8,16 @@ type QuizProps = {
 }
 
 
-export default function Quiz({indexSolution, question}: QuizProps) {
-
+export default function Quiz( ) {
+    const { moveToNextStep } = React.useContext(GameContext)
+    const {indexSolution, question} =  {
+        indexSolution: 2,
+        question: ["response1", "reponse2", "reponse3"]
+    }
 
     const handleOnClick = (index: number) => {
         if(index === indexSolution){
-            alert('Bonne réponse')
+            moveToNextStep();
         } else {
             alert('Mauvaise réponse')
         }

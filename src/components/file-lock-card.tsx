@@ -14,7 +14,6 @@ export default function FileLockCard(
     moveToNextStep()
     const newInventory = currentInventory.filter((item) => item.num !== 15 && item.num !== 13)
     // TODO add card key and card memo 
-    newInventory.push(bookCard)
     setCurrentInventory(newInventory)
     closeCard()
   }
