@@ -5,22 +5,23 @@ import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
 import room from "./assets/room.jpg"
 import CardImg from './components/card-img';
-import CardInput from './components/card-input';
-import { Dialog, Stack } from '@mui/material';
+import CardInput from './components/input-children';
+import { Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';
 import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
 import InventoryCard from './components/inventory-card';
+import InputChildren from './components/input-children';
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
-const compInput = (<CardInput></CardInput>)
+//const compInput = (<InputChildren></InputChildren>)
 
 const card1 = new Card(1, "Card 1", "This is card 1, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "Indice 1", compImg, 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
-const card2 = new Card(2, "Card 2", "This is card 2 ", "Indice 2", compInput, 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
+//const card2 = new Card(2, "Card 2", "This is card 2 ", "Indice 2", compInput, 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
 const component = (<GenericCard card={card1}/>)
-const component2 = (<GenericCard card={card2}/>)
+//const component2 = (<GenericCard card={card2}/>)
 
 function App() {
   const initialPointsOfInterest: PointOfInterest[] = [
