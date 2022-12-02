@@ -23,3 +23,7 @@ const memoComponent = (<GenericCard card={memoCard}/>)
 const keyImg = (<CardImg img_link='../assets/images/key.png'></CardImg>)
 const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", keyImg, '../assets/images/key.png');
 const keyComponent = (<GenericCard card={keyCard}/>)
+
+const computerImg = (<CardImg img_link='../assets/images/computer.png'></CardImg>)
+const computerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", keyImg, '../assets/images/computer.png');
+const computerComponent = (<GenericCard card={computerCard}/>)
