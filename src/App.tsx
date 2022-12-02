@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { memo, useMemo, useState } from 'react';
 
 import './App.css';
 import GenericCard from './components/generic-card';
@@ -11,7 +12,9 @@ import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
-import { drawerComponent, keyCard } from './data/cards';
+import InventoryCard from './components/inventory-card';
+import InputChildren from './components/input-children';
+import { drawerComponent, computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -24,12 +27,31 @@ const component = (<GenericCard card={card1}/>)
 
 function App() {
   const initialPointsOfInterest: PointOfInterest[] = [
-    {id: 1, x: 20, y: 50, width: 50, height: 50, onClick:()=>{ 
+    {id: 1, x: 22, y: 35, width: 50, height: 50, onClick:()=>{ 
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
-      setCurrentInventory((curInv) => [...curInv, card1])
-      setCardOpened(card1);
+      setCurrentInventory((curInv) => [...curInv, eiffelTowerCard])
+      setCardOpened(eiffelTowerCard);
      }}, 
-    {id: 2, x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}
+    {id: 2, x: 46, y: 78, width: 85, height: 50,onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, chestCard])
+      setCardOpened(chestCard);
+     }},
+    {id: 3, x: 76, y: 37, width: 50, height: 50,onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, memoCard])
+      setCardOpened(memoCard);
+     }},
+    {id: 4, x: 87, y: 55, width: 150, height: 50,onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, posterCard])
+      setCardOpened(posterCard);
+     }},
+    {id: 5, x: 78, y: 17, width: 100, height: 170,onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, posterCard])
+      setCardOpened(posterCard);
+     }}
   ]
 
   const [currentInventory, setCurrentInventory] = useState<Card[]>([]);

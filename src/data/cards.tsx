@@ -3,6 +3,8 @@ import CardImg from "../components/card-img";
 import DependentCard from "../components/dependent-cards";
 import GenericCard from "../components/generic-card";
 import Card from "../models/card";
+import ChestCard from "../components/chest-card";
+import chestImg from "../assets/chest.png"
 
 //Simple cards
 const eiffelTowerImg = (<CardImg img_link='../assets/images/eiffel_tower.png'></CardImg>)
@@ -22,7 +24,7 @@ const memoCard = new Card(8, "Mémo", "https://www.sida-info-service.org/, \n ht
 const memoComponent = (<GenericCard card={memoCard}/>)
 
 const keyImg = (<CardImg img_link='../assets/images/key.png'></CardImg>)
-export const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", keyImg, '../assets/images/key.png');
+const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", keyImg, '../assets/images/key.png');
 const keyComponent = (<GenericCard card={keyCard}/>)
 
 const computerImg = (<CardImg img_link='../assets/images/computer.png'></CardImg>)
@@ -33,5 +35,10 @@ const drawerCard = (<DependentCard list_card={9} text="string" onSuccess={() => 
     alert("ca marche")
 }}/>)
 const drawerCardEntier = new Card(1, "Coffre", "Decsription ?", "Il ne sert à rien sans batterie...", drawerCard, '../assets/images/computer.png');
-export const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
+const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
+
+const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
+
+
+export {drawerComponent,computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard}
