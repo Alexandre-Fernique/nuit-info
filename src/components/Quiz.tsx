@@ -9,7 +9,7 @@ type QuizProps = {
 
 
 export default function Quiz( ) {
-    const { moveToNextStep } = React.useContext(GameContext)
+    const { moveToNextStep, closeCard } = React.useContext(GameContext)
     const {indexSolution, question} =  {
         indexSolution: 1,
         question: ["T’inquiète, il y a peu de chances que tu attrape une IST de toutes façons.",
@@ -32,7 +32,10 @@ export default function Quiz( ) {
                 return (
                     <div key={index}>
                         <Typography>Quel message envoies-tu à ton amie ?</Typography>
-                        <Button variant="contained" onClick={()=>handleOnClick(index)}>{item}</Button>
+                        <Button variant="contained" onClick={()=> {
+                            handleOnClick(index)
+                            closeCard()
+                            }}>{item}</Button>
                     </div>)
             })
             }
