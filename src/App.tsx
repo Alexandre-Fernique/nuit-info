@@ -57,10 +57,23 @@ function App() {
      }}
   ]
 
+  const secondPointsOfInterest: PointOfInterest[] = [
+    {id: 1, x: 63, y: 25, width: 60, height: 70, onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, eiffelTowerCard])
+      setCardOpened(eiffelTowerCard);
+     }}, 
+    {id: 2, x: 91, y: 96, width: 65, height: 60,onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
+      setCurrentInventory((curInv) => [...curInv, chestCard])
+      setCardOpened(chestCard);
+     }}
+  ]
+
   const [isSuccessDialogVisible, setIsSuccessDialogVisible] = useState<boolean>(false);
   const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(5);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
   const lastStep = 8;
 
@@ -80,6 +93,9 @@ function App() {
     useEffect(() => {
       if (currentStep !== 1) {
       setIsSuccessDialogVisible(true);
+      }
+      if (currentStep === 5) {
+        setPointsOfInterest(secondPointsOfInterest)
       }
     }, [currentStep])
 
