@@ -59,17 +59,20 @@ export default function BookCard(props:{
                 </Popover>
             </Stack>
             </Stack>
-            
             <Stack direction='row' width='100%' justifyContent='center'>
             <Typography align='justify' sx={{fontFamily: 'Quicksand', fontSize: '14px'}}>{card.description}</Typography>
             </Stack>
-        </Stack>
+            
+            
+            
+        
 
         <Stack justifyContent="center">
             <Button onClick={onSuccess}>
             <img src={card.full_size_img} width="30%" alt="test"></img>
             </Button>
-            </Stack>
+        </Stack>
+    </Stack>
       
     </Paper>
   )

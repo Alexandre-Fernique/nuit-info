@@ -65,7 +65,7 @@ const definitionCard = new Card( 12, "Mémo", "Un nouveau mémo", "Faite attenti
 const illenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", <div></div>, fichierVerouille);
 const IllenessTokenListComponent = (<GenericCard card={illenessTokenListCard} />)
 
-const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div></div>, livre);
+const bookCard = new Card(7, "Un livre fermé", "Un vieux livre fermé...", "Que renferme t'il ?", <div></div>, livre);
 const bookComponent = (<BookCard card={bookCard}/>)
 
 const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Trouvez la maladie associée aux symptômes suivants : \n Avant poussée : apparition de brûlures, d’irritations ou de picotements. Pendant poussée : apparition de vésicules (boutons) ou ulcères inflammés au niveau génital, anal, ou autour de ces zones, qui cicatrisent et disparaissent en 8 à 15 jours.", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, lockImg)
