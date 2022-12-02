@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "../styles/card.css";
 import InputChildren from "./input-children";
 import GameContext from "../context/game-context";

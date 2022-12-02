@@ -18,6 +18,7 @@ import InventoryCard from './components/inventory-card';
 import InputChildren from './components/input-children';
 import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 import SuccessDialog from './components/success-dialog';
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -107,10 +108,17 @@ function App() {
     setOpenFirstModal(false);
 
   }
+  const handleOpen = () => {
+    setOpenFirstModal(true);
+  }
 
   return (
 
     <GameContext.Provider value={gameContext}>
+        <div className={"absolute top-4 left-4"}>
+            <Button onClick={handleOpen}><HelpOutlineIcon/></Button>
+        </div>
+
       <Modal
           open={openFirstModal}
           onClose={handleClose}
