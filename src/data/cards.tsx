@@ -41,14 +41,14 @@ const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", <div></di
 const keyComponent = (<GenericCard card={keyCard}/>)
 
 
-const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", <div></div>, computer_without_power);
+const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "L'ordinateur ne veut pas s'allumer, il faut le brancher...", "Il ne sert à rien sans batterie...", <div></div>, computer_without_power);
 const computerComponent = (<GenericCard card={computerWithoutPowerCard}/>) 
 
 const drawerCard = (<DrawerCard list_card={9} text="Ouvrir"/>)
-const drawerCardEntier = new Card(5, "Tiroir", "Un tiroir fermé à clef...", "La serrure est fermée, seul une clef peut l'ouvrir", drawerCard, drawer);
+const drawerCardEntier = new Card(5, "Tiroir", "Un tiroir fermé à clef...", "La serrure est fermée, seul une clef peut l'ouvrir...", drawerCard, drawer);
 const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
-const chargerCard = new Card(14, "Chargeur", "Un chargeur qu'il faut débloquer", "Penser aux couleurs du mémo", <CableMachine/>, chargeurImg);
+const chargerCard = new Card(14, "Chargeur", "Un chargeur qu'il faut débloquer, trouvez les couleurs dans le bon ordre", "Penser aux couleurs du mémo", <CableMachine/>, chargeurImg);
 const chargerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
