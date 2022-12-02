@@ -33,12 +33,12 @@ const component = (<GenericCard card={card1}/>)
 
 function App() {
   const initialPointsOfInterest: PointOfInterest[] = [
-    {id: 1, x: 22, y: 35, width: 50, height: 100, onClick:()=>{ 
+    {id: 1, x: 22, y: 35, width: 50, height: 50, onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
       setCurrentInventory((curInv) => [...curInv, eiffelTowerCard])
       setCardOpened(eiffelTowerCard);
      }}, 
-    {id: 2, x: 46, y: 75, width: 100, height: 60,onClick:()=>{ 
+    {id: 2, x: 46, y: 75, width: 60, height: 60,onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
       setCurrentInventory((curInv) => [...curInv, chestCard])
       setCardOpened(chestCard);
@@ -48,12 +48,12 @@ function App() {
       setCurrentInventory((curInv) => [...curInv, postItCard])
       setCardOpened(postItCard);
      }},
-    {id: 4, x: 87, y: 55, width: 150, height: 50,onClick:()=>{ 
+    {id: 4, x: 87, y: 55, width: 50, height: 50,onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 4))
       setCurrentInventory((curInv) => [...curInv, drawerCardEntier])
       setCardOpened(drawerCardEntier);
      }},
-    {id: 5, x: 78, y: 17, width: 100, height: 170,onClick:()=>{ 
+    {id: 5, x: 78, y: 17, width: 100, height: 100,onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 5))
       setCurrentInventory((curInv) => [...curInv, posterCard])
       setCardOpened(posterCard);
@@ -61,12 +61,12 @@ function App() {
   ]
 
   const secondPointsOfInterest: PointOfInterest[] = [
-    {id: 1, x: 63, y: 25, width: 60, height: 70, onClick:()=>{ 
+    {id: 1, x: 63, y: 25, width: 60, height: 60, onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
       setCurrentInventory((curInv) => [...curInv, illenessTokenListCard])
       setCardOpened(illenessTokenListCard);
      }}, 
-    {id: 2, x: 91, y: 96, width: 65, height: 60,onClick:()=>{ 
+    {id: 2, x: 91, y: 96, width: 60, height: 60,onClick:()=>{
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
       setCurrentInventory((curInv) => [...curInv, lockFileCard])
       setCardOpened(lockFileCard);
