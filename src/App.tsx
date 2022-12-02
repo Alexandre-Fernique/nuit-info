@@ -5,6 +5,7 @@ import './App.css';
 import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
 import office from "./assets/office.png"
+import IllnessTokenList from './assets/liste_maladies_tokens.png'
 import CardImg from './components/card-img';
 import { Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';

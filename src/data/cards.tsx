@@ -5,6 +5,7 @@ import GenericCard from "../components/generic-card";
 import Card from "../models/card";
 import ChestCard from "../components/chest-card";
 import chestImg from "../assets/chest.png"
+import IllenessTokenList from "../assets/liste_maladies_tokens.png"
 import ComputerOnCard from "../components/computer-on-card";
 
 //Simple cards
@@ -43,5 +44,8 @@ const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-
 
 const computerOnCard = new Card( 1, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, chestImg)
 
+const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies_tokens.png'></CardImg>)
+const IllenessTokenListCard = new Card(2, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
+const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
 
-export {drawerCardEntier,computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard}
+export {IllenessTokenListCard, drawerCardEntier,computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard}
