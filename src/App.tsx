@@ -8,7 +8,7 @@ import office from "./assets/office.png"
 import IllnessTokenList from './assets/liste_maladies_tokens.png'
 import desktop from "./assets/desktop.jpeg"
 import CardImg from './components/card-img';
-import { Dialog, Grid, Stack } from '@mui/material';
+import { Button, Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';
 import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
@@ -17,6 +17,7 @@ import GameTimer from './components/game-timer';
 import InventoryCard from './components/inventory-card';
 import InputChildren from './components/input-children';
 import { drawerCardEntier, drawerComponent, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
+import SuccessDialog from './components/success-dialog';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -56,7 +57,8 @@ function App() {
      }}
   ]
 
-  const [currentInventory, setCurrentInventory] = useState<Card[]>([keyCard]);
+  const [isSuccessDialogVisible, setIsSuccessDialogVisible] = useState<boolean>(false);
+  const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
@@ -66,11 +68,20 @@ function App() {
     currentInventory: currentInventory,
     currentStep: currentStep,
     pointsOfInterest: pointsOfInterest,
+    isSuccessDialogVisible: isSuccessDialogVisible,
     setCurrentInventory: setCurrentInventory,
     setPointsOfInterest: setPointsOfInterest,
+    setIsSuccessDialogVisible: setIsSuccessDialogVisible,
     openCard: (card:Card)=>setCardOpened(card),
     moveToNextStep: () => setCurrentStep((step) => step + 1)
-  }), [currentInventory, currentStep, pointsOfInterest]);
+  }), [currentInventory, currentStep, pointsOfInterest, isSuccessDialogVisible]);
+
+
+    useEffect(() => {
+      if (currentStep !== 0) {
+      setIsSuccessDialogVisible(true);
+      }
+    }, [currentStep])
 
   useEffect(() => {
     console.log(currentStep)
@@ -86,6 +97,9 @@ function App() {
           <GenericCard card={cardOpened}/>
         </Dialog>)
       }
+      <Dialog fullWidth sx={{height:'100%'}} open={isSuccessDialogVisible} onClose={()=>setIsSuccessDialogVisible(false)}>
+          <SuccessDialog cards={[ postItCard ]}></SuccessDialog>
+      </Dialog>
       <Stack direction='column' paddingX={10} paddingTop={2}>
         <GameTimer durationInMinutes={15}></GameTimer>
         {currentStep >= lastStep
