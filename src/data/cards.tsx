@@ -6,7 +6,7 @@ import Card from "../models/card";
 import ChestCard from "../components/chest-card";
 import IllenessTokenList from "../assets/liste_maladies_tokens.png"
 import ComputerOnCard from "../components/computer-on-card";
-import chestImg from "../assets/chest.png";
+import chestImg from "../assets/chest.webp";
 import chargeurImg from "../assets/chargeur.jpeg";
 import drawer from "../assets/drawer_img.jpeg";
 import key from "../assets/key.png";

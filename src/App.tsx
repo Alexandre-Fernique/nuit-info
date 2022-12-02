@@ -4,9 +4,9 @@ import React, { memo, useEffect, useMemo, useState } from 'react';
 import './App.css';
 import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
-import office from "./assets/office.png"
+import office from "./assets/office.webp"
 import IllnessTokenList from './assets/liste_maladies_tokens.png'
-import desktop from "./assets/desktop.jpeg"
+import desktop from "./assets/desktop.webp"
 import CardImg from './components/card-img';
 import {Button, Dialog, Grid, Modal, Paper, Stack, Typography} from '@mui/material';
 import Card from './models/card';
