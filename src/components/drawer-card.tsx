@@ -9,7 +9,7 @@ export default function DrawerCard(props:{
   text: string,
 }){
   const {list_card, text} = props;
-  const { moveToNextStep, currentInventory, setCurrentInventory } = React.useContext(GameContext)
+  const { moveToNextStep, currentInventory, setCurrentInventory, closeCard } = React.useContext(GameContext)
 
   const isPresent : boolean = currentInventory.some((card) => card.num === list_card);
 
@@ -21,6 +21,7 @@ export default function DrawerCard(props:{
     newInventory.push(definitionCard)
     newInventory.push(chargerCard)
     setCurrentInventory(newInventory)
+    closeCard()
   }
 
   const onClick = () => {

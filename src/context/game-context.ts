@@ -11,6 +11,7 @@ export interface GameContextType {
   setPointsOfInterest: React.Dispatch<React.SetStateAction<PointOfInterest[]>>
   setIsSuccessDialogVisible: React.Dispatch<React.SetStateAction<boolean>>
   openCard: (card:Card)=>void
+  closeCard: () => void
   moveToNextStep: () => void
 }
 
@@ -23,6 +24,7 @@ const GameContext = createContext<GameContextType>({
   setCurrentInventory: () => {},
   setIsSuccessDialogVisible: () => {},
   openCard: () => {},
+  closeCard: () => {},
   moveToNextStep: () => {}
 });
 

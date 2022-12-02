@@ -19,7 +19,7 @@ export default function CableMachine() {
         return false;
 
     }
-    const { moveToNextStep, currentInventory, setCurrentInventory } = React.useContext(GameContext)
+    const { moveToNextStep, currentInventory, setCurrentInventory, closeCard } = React.useContext(GameContext)
 
 
     const validate = () => {
@@ -31,7 +31,8 @@ export default function CableMachine() {
                 const newInventory = currentInventory.filter((item) => item.num !== 10 && item.num !== 12 && item.num !== 14)
                 // TODO add card key and card memo 
                 newInventory.push(computerOnCard)
-                setCurrentInventory(newInventory)            
+                setCurrentInventory(newInventory)
+                closeCard()            
             }
         } else {
             setErrorMessage("Oups ! Ce n'est pas la bonne combinaison...")

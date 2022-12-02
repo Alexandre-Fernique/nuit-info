@@ -7,7 +7,7 @@ import { memoCard, bookCard } from "../data/cards";
 export default function ChestCard(
 ){
 
-  const { moveToNextStep, currentInventory, setCurrentInventory } = useContext(GameContext)
+  const { moveToNextStep, currentInventory, setCurrentInventory, closeCard } = useContext(GameContext)
 
 
   const onSuccess = () => {
@@ -17,6 +17,7 @@ export default function ChestCard(
     newInventory.push(bookCard)
     newInventory.push(memoCard)
     setCurrentInventory(newInventory)
+    closeCard()
   }
 
   return (

@@ -24,7 +24,7 @@ export default function BookCard(props:{
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-    const { moveToNextStep, currentInventory, setCurrentInventory } = React.useContext(GameContext)
+    const { moveToNextStep, currentInventory, setCurrentInventory, closeCard } = React.useContext(GameContext)
 
 
     const onSuccess = () => {
@@ -33,6 +33,7 @@ export default function BookCard(props:{
         // TODO add card key and card memo 
         newInventory.push(keyCard)
         setCurrentInventory(newInventory)
+        closeCard()
     }
 
   return (

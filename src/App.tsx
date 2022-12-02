@@ -89,6 +89,7 @@ function App() {
     setPointsOfInterest: setPointsOfInterest,
     setIsSuccessDialogVisible: setIsSuccessDialogVisible,
     openCard: (card:Card)=>setCardOpened(card),
+    closeCard: () => setCardOpened(undefined),
     moveToNextStep: () => setCurrentStep((step) => step + 1)
   }), [currentInventory, currentStep, pointsOfInterest, isSuccessDialogVisible]);
 

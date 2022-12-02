@@ -7,7 +7,7 @@ import { bookCard } from "../data/cards";
 export default function FileLockCard(
 ){
 
-  const { moveToNextStep, currentInventory, setCurrentInventory } = useContext(GameContext)
+  const { moveToNextStep, currentInventory, setCurrentInventory, closeCard } = useContext(GameContext)
 
 
   const onSuccess = () => {
@@ -16,6 +16,7 @@ export default function FileLockCard(
     // TODO add card key and card memo 
     newInventory.push(bookCard)
     setCurrentInventory(newInventory)
+    closeCard()
   }
 
   return (
