@@ -13,13 +13,16 @@ import key from "../assets/key.png";
 import post_it from "../assets/post_it_img.png";
 import memo from "../assets/memo_img.png";
 import eiffel_tower from "../assets/eiffel_tower_img.png";
-import computer from "../assets/computer.jpg";
+import computer_without_power from "../assets/laptop_without_power.png";
+import computer_locked from "../assets/laptop_locked.png";
 import affiche from "../assets/affiche_img.png";
+import livre from "../assets/book_closed.jpg";
 import GameContext from "../context/game-context";
 import React from "react";
 import definitionImg from "../assets/definition.png"
 import CableMachine from "../components/CableMachine";
 
+import BookCard from "../components/book-card";
 
 //Simple cards
 const eiffelTowerCard = new Card(2, "Tour Eiffel", "Quel bel objet de décoration", "Indice 1", <div></div>, eiffel_tower);
@@ -38,7 +41,7 @@ const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", <div></di
 const keyComponent = (<GenericCard card={keyCard}/>)
 
 
-const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", <div></div>, computer);
+const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", <div></div>, computer_without_power);
 const computerComponent = (<GenericCard card={computerWithoutPowerCard}/>) 
 
 const drawerCard = (<DrawerCard list_card={9} text="Ouvrir"/>)
@@ -50,7 +53,7 @@ const chargerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
 
-const computerOnCard = new Card( 11, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, chestImg)
+const computerOnCard = new Card( 11, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, computer_locked)
 
 const definitionCard = new Card( 12, "Mémo", "Un nouveau mémo", "Faite attention aux couleurs", definitionImg, definitionImg)
 
@@ -58,4 +61,8 @@ const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies
 const IllenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
 const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
 
-export {IllenessTokenListCard, drawerCardEntier, chargerCard ,computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
+const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div></div>, livre);
+const bookComponent = (<BookCard card={bookCard}/>)
+
+
+export {bookCard, IllenessTokenListCard, drawerCardEntier, chargerCard, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}

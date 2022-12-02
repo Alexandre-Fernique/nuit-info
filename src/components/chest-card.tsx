@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../styles/card.css";
 import InputChildren from "./input-children";
 import GameContext from "../context/game-context";
-import { keyCard, memoCard } from "../data/cards";
+import { memoCard, bookCard } from "../data/cards";
 
 export default function ChestCard(
 ){
@@ -14,7 +14,7 @@ export default function ChestCard(
     moveToNextStep()
     const newInventory = currentInventory.filter((item) => item.num !== 4 && item.num !== 1)
     // TODO add card key and card memo 
-    newInventory.push(keyCard)
+    newInventory.push(bookCard)
     newInventory.push(memoCard)
     setCurrentInventory(newInventory)
   }

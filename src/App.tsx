@@ -19,6 +19,7 @@ import InputChildren from './components/input-children';
 import { drawerCardEntier, drawerCard, computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 import SuccessDialog from './components/success-dialog';
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import BookCard from './components/book-card';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -143,7 +144,7 @@ function App() {
       {
         cardOpened &&( 
         <Dialog fullWidth sx={{height:'100%'}} open={!!cardOpened} onClose={()=>setCardOpened(undefined)}>
-          <GenericCard card={cardOpened}/>
+          {cardOpened.num === 7?<BookCard card={cardOpened}/>:<GenericCard card={cardOpened}/>}
         </Dialog>)
       }
       <Dialog fullWidth sx={{height:'100%'}} open={isSuccessDialogVisible} onClose={()=>setIsSuccessDialogVisible(false)}>
