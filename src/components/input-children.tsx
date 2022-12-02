@@ -28,7 +28,11 @@ export default function InputChildren(props: CardInputProps
 
   return (
     <Stack justifyContent='center'>
-        {error && <Alert severity="error">Code invalide</Alert> }
+        {error && <Alert severity="error"
+                      sx={{ marginBottom: 2 }}
+                      onClose={() => {
+                        setError(false);
+                      }}>Code invalide</Alert> }
         <TextField type='text' placeholder='Saisir le code' onChange={(event) => {setCurrentCode(event.target.value)}} value={currentCode}></TextField>
         <Button onClick={onSubmit}>Valider</Button>
     </Stack>

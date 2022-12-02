@@ -95,13 +95,13 @@ function App() {
 
 
     useEffect(() => {
-      if (currentStep !== 1) {
+      if (currentStep !== 0) {
       setIsSuccessDialogVisible(true);
       }
       if (currentStep === 5) {
         setPointsOfInterest(secondPointsOfInterest)
       }
-    }, [currentStep])
+    }, [currentStep, secondPointsOfInterest])
 
   useEffect(() => {
     console.log(currentStep)
@@ -155,7 +155,6 @@ function App() {
           <SuccessDialog cards={[ postItCard ]}></SuccessDialog>
       </Dialog>
       <Stack direction='column' paddingX={10} paddingTop={2}>
-        <GameTimer durationInMinutes={15}></GameTimer>
         {currentStep >= lastStep
         ?
           <div>
