@@ -79,7 +79,7 @@ function App() {
   const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
-  const lastStep = 8;
+  const lastStep = 7;
 
   const gameContext = useMemo<GameContextType>(() => ({
     currentInventory: currentInventory,
