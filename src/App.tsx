@@ -12,9 +12,7 @@ import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
-import InventoryCard from './components/inventory-card';
-import InputChildren from './components/input-children';
-import { drawerComponent, computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
+import { drawerCardEntier, computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard } from './data/cards';
 
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
@@ -33,22 +31,22 @@ function App() {
       setCardOpened(eiffelTowerCard);
      }}, 
     {id: 2, x: 46, y: 78, width: 85, height: 50,onClick:()=>{ 
-      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
       setCurrentInventory((curInv) => [...curInv, chestCard])
       setCardOpened(chestCard);
      }},
     {id: 3, x: 76, y: 37, width: 50, height: 50,onClick:()=>{ 
-      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
-      setCurrentInventory((curInv) => [...curInv, memoCard])
-      setCardOpened(memoCard);
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 3))
+      setCurrentInventory((curInv) => [...curInv, postItCard])
+      setCardOpened(postItCard);
      }},
     {id: 4, x: 87, y: 55, width: 150, height: 50,onClick:()=>{ 
-      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
-      setCurrentInventory((curInv) => [...curInv, posterCard])
-      setCardOpened(posterCard);
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 4))
+      setCurrentInventory((curInv) => [...curInv, drawerCardEntier])
+      setCardOpened(drawerCardEntier);
      }},
     {id: 5, x: 78, y: 17, width: 100, height: 170,onClick:()=>{ 
-      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 5))
       setCurrentInventory((curInv) => [...curInv, posterCard])
       setCardOpened(posterCard);
      }}
@@ -92,7 +90,6 @@ function App() {
           <Stack direction='column' spacing={2}>
               <Screen items={pointsOfInterest} url={office}></Screen>
               <Inventory cards={currentInventory}></Inventory>
-              {drawerComponent}
           </Stack>
         }
       </Stack>

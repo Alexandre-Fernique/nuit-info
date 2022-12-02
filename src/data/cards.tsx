@@ -5,6 +5,7 @@ import GenericCard from "../components/generic-card";
 import Card from "../models/card";
 import ChestCard from "../components/chest-card";
 import chestImg from "../assets/chest.png"
+import ComputerOnCard from "../components/computer-on-card";
 
 //Simple cards
 const eiffelTowerImg = (<CardImg img_link='../assets/images/eiffel_tower.png'></CardImg>)
@@ -40,5 +41,7 @@ const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
 
+const computerOnCard = new Card( 1, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, chestImg)
 
-export {drawerComponent,computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard}
+
+export {drawerCardEntier,computerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard}
