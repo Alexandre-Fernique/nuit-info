@@ -7,6 +7,7 @@ import ChestCard from "../components/chest-card";
 import IllenessTokenList from "../assets/liste_maladies_tokens.png"
 import ComputerOnCard from "../components/computer-on-card";
 import chestImg from "../assets/chest.png";
+import chargeurImg from "../assets/chargeur.jpeg";
 import drawer from "../assets/drawer_img.jpeg";
 import key from "../assets/key.png";
 import post_it from "../assets/post_it_img.png";
@@ -44,7 +45,7 @@ const drawerCard = (<DrawerCard list_card={9} text="Ouvrir"/>)
 const drawerCardEntier = new Card(5, "Tiroir", "Un tiroir fermé à clef...", "La serrure est fermée, seul une clef peut l'ouvrir", drawerCard, drawer);
 const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
-const chargerCard = new Card(14, "Chargeur", "Un chargeur qu'il faut débloquer", "Penser aux couleurs du mémo", <CableMachine/>, drawer);
+const chargerCard = new Card(14, "Chargeur", "Un chargeur qu'il faut débloquer", "Penser aux couleurs du mémo", <CableMachine/>, chargeurImg);
 const chargerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
