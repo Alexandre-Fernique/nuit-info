@@ -3,7 +3,7 @@ import React, { useMemo, useState } from 'react';
 import './App.css';
 import GenericCard from './components/generic-card';
 import Screen from "./components/Screen";
-import room from "./assets/room.jpg"
+import office from "./assets/office.png"
 import CardImg from './components/card-img';
 import { Dialog, Grid, Stack } from '@mui/material';
 import Card from './models/card';
@@ -68,7 +68,7 @@ function App() {
           :
 
           <Stack direction='column' spacing={2}>
-              <Screen items={pointsOfInterest} url={room}></Screen>
+              <Screen items={pointsOfInterest} url={office}></Screen>
               <Inventory cards={currentInventory}></Inventory>
               {drawerComponent}
           </Stack>
