@@ -135,12 +135,9 @@ function App() {
                           Bienvenue dans le jeu !
                         </Typography>
                         <Typography align='justify'>
-                            
-                            Il est 18h45, une amie vous appelle en panique. La veille, elle a eu un rapport sexuel non protégé et a appris que sa partenaire, rencontrée la veille, avait une IST. Votre maman étant gynécologue, c’est vers vous qu’elle se tourne pour l’aider à savoir quoi faire et comment réagir face à cette situation. Votre mère n’est pas là, mais vous savez que vous allez pouvoir l’aider car celle-ci détient toutes les réponses sur son ordinateur qui se trouve dans son bureau.
 
-                            Malheureusement, votre mère est à la pointe de la technologie et a équipé tout son bureau, avec notamment un système qui verrouille automatiquement son bureau à 19h pile. Pour ne pas vous retrouver enfermé dedans, vous avez 15 minutes pour trouver les informations qu’il faut pour aider votre amie et sortir du bureau de votre mère à temps. Alors, ne traînez pas, votre amie a besoin de vous !  
-                            <br /> Bonne chance !
-                    </Typography>
+                            Une amie vous appelle en panique. La veille, elle a eu un rapport sexuel non protégée et a appris que sa partenaire, rencontrée la veille, avait une IST. Votre maman étant gynécologue, c’est vers vous qu’elle se tourne pour l’aider à savoir quoi faire, à savoir comment réagir à cette situation. Malheureusement votre mère n’est pas là, mais vous savez que vous allez pouvoir l’aider car celle-ci détient toutes les réponses sur son ordinateur qui se trouve dans son bureau. Trouvez les informations qu’il faut pour aider votre amie ! Celle-ci a besoin de vous, elle compte sur vous !
+                        </Typography>
 
             </Stack>
 
