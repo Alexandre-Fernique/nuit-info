@@ -161,7 +161,6 @@ function App() {
           :
 
           <Stack direction='column' spacing={2}>
-            <CableMachine></CableMachine>
               {currentStep < 5 ? (
               <Screen items={pointsOfInterest} url={office}></Screen>
               ) : (
