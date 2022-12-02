@@ -21,6 +21,6 @@ export default function ChestCard(
   }
 
   return (
-    <InputChildren codeSolution="1234" onSuccess={onSuccess}></InputChildren>
+    <InputChildren codeSolution="4730" onSuccess={onSuccess}></InputChildren>
   )
 }

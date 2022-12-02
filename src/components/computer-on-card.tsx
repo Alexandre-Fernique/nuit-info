@@ -18,6 +18,6 @@ export default function ComputerOnCard(
   }
 
   return (
-    <InputChildren codeSolution="code" onSuccess={onSuccess}></InputChildren>
+    <InputChildren codeSolution="Gonococcie" onSuccess={onSuccess}></InputChildren>
   )
 }
