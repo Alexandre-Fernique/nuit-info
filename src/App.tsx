@@ -32,12 +32,12 @@ const component = (<GenericCard card={card1}/>)
 
 function App() {
   const initialPointsOfInterest: PointOfInterest[] = [
-    {id: 1, x: 22, y: 35, width: 50, height: 50, onClick:()=>{ 
+    {id: 1, x: 22, y: 35, width: 50, height: 100, onClick:()=>{ 
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
       setCurrentInventory((curInv) => [...curInv, eiffelTowerCard])
       setCardOpened(eiffelTowerCard);
      }}, 
-    {id: 2, x: 46, y: 78, width: 85, height: 50,onClick:()=>{ 
+    {id: 2, x: 46, y: 75, width: 100, height: 60,onClick:()=>{ 
       setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 2))
       setCurrentInventory((curInv) => [...curInv, chestCard])
       setCardOpened(chestCard);
