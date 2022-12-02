@@ -16,7 +16,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
-        <Typography>Super, le coffre est ouvert ! Dedans se trouvent un livre fermé et un mémo. Pense à regarde ton inventaire 😉</Typography>
+        <Typography>Super, le coffre est ouvert ! Dedans se trouvent un livre fermé et un mémo. Pense à regarder ton inventaire 😉</Typography>
         <Button onClick={() => { setIsSuccessDialogVisible(false) }} variant="contained">Cool !</Button>
       </Stack>
     </Box>
@@ -25,7 +25,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
-        <Typography>Le livre s’ouvre, une clé était cachée dedans. Pense à regarde ton inventaire 😉</Typography>
+        <Typography>Le livre s’ouvre, une clé était cachée dedans. Pense à regarder ton inventaire 😉</Typography>
         <Button onClick={() => { setIsSuccessDialogVisible(false) }} variant="contained">Cool !</Button>
       </Stack>
     </Box>
@@ -34,7 +34,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
-        <Typography>Le tiroir s’ouvre ! C’est là que maman range son ordinateur ! Pense à regarde ton inventaire 😉</Typography>
+        <Typography>Le tiroir s’ouvre ! C’est là que maman range son ordinateur ! Pense à regarder ton inventaire 😉</Typography>
         <Button onClick={() => { setIsSuccessDialogVisible(false) }} variant="contained">Cool !</Button>
       </Stack>
     </Box>
@@ -43,7 +43,7 @@ export default function SuccessDialog({ cards }: SuccessDialogProps) {
       <Box padding={3}>
       <Stack alignItems="center" spacing="20px">
         <Typography variant="h6">Bravo !</Typography>
-        <Typography>Super le chargeur est réparé ! L’ordinateur va pouvoir se recharger et s’allumer. Pense à regarde ton inventaire 😉</Typography>
+        <Typography>Super le chargeur est réparé ! L’ordinateur va pouvoir se recharger et s’allumer. Pense à regarder ton inventaire 😉</Typography>
         <Button onClick={() => { setIsSuccessDialogVisible(false) }} variant="contained">Cool !</Button>
       </Stack>
     </Box>

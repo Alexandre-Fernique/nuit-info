@@ -101,10 +101,9 @@ function App() {
       if (currentStep === 5) {
         setPointsOfInterest(secondPointsOfInterest)
       }
-    }, [currentStep, secondPointsOfInterest])
+    }, [currentStep])
 
   useEffect(() => {
-    console.log(currentStep)
   }, [currentStep])
   const [openFirstModal,setOpenFirstModal] = useState<boolean>(true);
   const handleClose = () => {
@@ -154,6 +153,7 @@ function App() {
       <Dialog fullWidth sx={{height:'100%'}} open={isSuccessDialogVisible} onClose={()=>setIsSuccessDialogVisible(false)}>
           <SuccessDialog cards={[ postItCard ]}></SuccessDialog>
       </Dialog>
+   
       <Stack direction='column' paddingX={10} paddingTop={2}>
         {currentStep >= lastStep
         ?
