@@ -35,12 +35,12 @@ const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", <div></di
 const keyComponent = (<GenericCard card={keyCard}/>)
 
 
-const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", <div></div>, computer);
+export const computerWithoutPowerCard = new Card(10, "Ordinateur sans batterie", "Decsription ?", "Il ne sert à rien sans batterie...", <div></div>, computer);
 const computerComponent = (<GenericCard card={computerWithoutPowerCard}/>) 
 
 const drawerCard = (<DrawerCard list_card={9} text="Ouvrir"/>)
 const drawerCardEntier = new Card(5, "Tiroir", "Un tiroir fermé à clef...", "La serrure est fermée, seul une clef peut l'ouvrir", drawerCard, drawer);
-const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
+export const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
