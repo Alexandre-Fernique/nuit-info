@@ -16,6 +16,7 @@ import computer from "../assets/computer.jpg";
 import affiche from "../assets/affiche_img.png";
 import GameContext from "../context/game-context";
 import React from "react";
+import definitionImg from "../assets/definition.png"
 
 //Simple cards
 const eiffelTowerCard = new Card(2, "Tour Eiffel", "Quel bel objet de décoration", "Indice 1", <div></div>, eiffel_tower);
@@ -44,11 +45,12 @@ const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
 
-const computerOnCard = new Card( 1, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, chestImg)
+const computerOnCard = new Card( 11, "Ordinateur verrouillé", "Indice pour le code", "Vous ne trouvez pas la maladie correspondant à cette définition Chercher bien sur les sites que nous vous avons fournis",  <ComputerOnCard/>, chestImg)
+
+const definitionCard = new Card( 12, "Mémo", "Un nouveau mémo", "Faite attention aux couleurs", definitionImg, definitionImg)
 
 const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies_tokens.png'></CardImg>)
-const IllenessTokenListCard = new Card(2, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
+const IllenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
 const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
 
-
-export {IllenessTokenListCard,drawerCardEntier, drawerComponent,computerWithoutPowerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard}
+export {IllenessTokenListCard, drawerCardEntier, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
