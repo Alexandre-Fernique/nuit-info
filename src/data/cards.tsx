@@ -17,6 +17,7 @@ import computer_without_power from "../assets/laptop_without_power.png";
 import computer_locked from "../assets/laptop_locked.png";
 import affiche from "../assets/affiche_img.png";
 import livre from "../assets/book_closed.jpg";
+import fichierVerouille from "../assets/liste_maladies_tokens.png";
 import GameContext from "../context/game-context";
 import React from "react";
 import definitionImg from "../assets/definition.png"
@@ -60,14 +61,13 @@ const computerOnCard = new Card( 11, "Ordinateur verrouillé", "IST bactérienne
 
 const definitionCard = new Card( 12, "Mémo", "Un nouveau mémo", "Faite attention aux couleurs", definitionImg, definitionImg)
 
-const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies_tokens.png'></CardImg>)
-const illenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
+const illenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", <div></div>, fichierVerouille);
 const IllenessTokenListComponent = (<GenericCard card={illenessTokenListCard} />)
 
 const bookCard = new Card(7, "Un livre fermé", "", "Que renferme t'il ?", <div></div>, livre);
 const bookComponent = (<BookCard card={bookCard}/>)
 
-const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Donner les symptomes", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, lockImg)
+const lockFileCard = new Card( 15, "Fichier vérouillé", "Vous avez enfin trouvé le fichier mais il est vérrouillé par un mot de passe. Trouvez la maladie associée aux symptômes suivants : \n Avant poussée : apparition de brûlures, d’irritations ou de picotements. Pendant poussée : apparition de vésicules (boutons) ou ulcères inflammés au niveau génital, anal, ou autour de ces zones, qui cicatrisent et disparaissent en 8 à 15 jours.", "Avez-vous bien regardé le fichier 'Liste MST' ?",  <FileLockCard/>, fichierVerouille)
 
 const endCard = new Card( 15, "Téléphone", "Vous avez trouvez toutes les informations, vous pouvez maintenant répondre à votre copine.", "Pas d'indice",  <Quiz/>, chestImg)
 

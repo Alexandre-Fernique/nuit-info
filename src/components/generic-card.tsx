@@ -45,14 +45,18 @@ export default function GenericCard(props:{
             </Popover>
           </Stack>
         </Stack>
-        <Stack justifyContent="center">
-            <img src={card.full_size_img} width="50%" alt="test"></img>
-    </Stack>
-        {card.children}
         <Stack direction='row' width='100%' justifyContent='center'>
-          <Typography align='justify' sx={{fontFamily: 'Quicksand', fontSize: '14px'}}>{card.description}</Typography></Stack>
-      </Stack>
+          <Typography align='justify' sx={{fontFamily: 'Quicksand', fontSize: '14px'}}>{card.description}</Typography>
+        </Stack>
+       
       
+        <Stack justifyContent="center">
+          <img src={card.full_size_img} width="50%" alt="test"></img>
+        </Stack>
+        {card.children}
+      </Stack>
+
+
     </Paper>
   )
 }
