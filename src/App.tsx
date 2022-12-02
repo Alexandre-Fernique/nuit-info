@@ -12,6 +12,7 @@ import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
 import GameTimer from './components/game-timer';
+import InventoryCard from './components/inventory-card';
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
 const compInput = (<CardInput></CardInput>)
@@ -23,8 +24,12 @@ const component2 = (<GenericCard card={card2}/>)
 
 function App() {
   const initialPointsOfInterest: PointOfInterest[] = [
-    {x: 20, y: 50, width: 100, height: 100, onClick:()=>{ alert("click")}}, 
-    {x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}
+    {id: 1, x: 20, y: 50, width: 50, height: 50, onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, card1])
+      setCardOpened(card1);
+     }}, 
+    {id: 2, x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}
   ]
 
   const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
