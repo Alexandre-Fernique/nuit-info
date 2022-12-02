@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../styles/card.css";
 import InputChildren from "./input-children";
 import GameContext from "../context/game-context";
-import { bookCard } from "../data/cards";
+import { endCard } from "../data/cards";
 
 export default function FileLockCard(
 ){
@@ -13,7 +13,7 @@ export default function FileLockCard(
   const onSuccess = () => {
     moveToNextStep()
     const newInventory = currentInventory.filter((item) => item.num !== 15 && item.num !== 13)
-    // TODO add card key and card memo 
+    newInventory.push(endCard)
     setCurrentInventory(newInventory)
     closeCard()
   }

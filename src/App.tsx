@@ -120,6 +120,7 @@ function App() {
     <GameContext.Provider value={gameContext}>
         <div className={"absolute top-4 left-4"}>
             <Button onClick={handleOpen}><HelpOutlineIcon/></Button>
+            <div>{currentStep}</div>
         </div>
 
       <Modal
