@@ -78,7 +78,7 @@ function App() {
 
 
     useEffect(() => {
-      if (currentStep !== 0) {
+      if (currentStep !== 1) {
       setIsSuccessDialogVisible(true);
       }
     }, [currentStep])
