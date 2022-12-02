@@ -27,7 +27,7 @@ export default function GenericCard(props:{
       <Stack  padding="5px" direction='column' spacing='10px' sx={{border:'1.5px black solid', borderRadius:"5px", boxShadow: 5}}>
         <Stack direction='row' width='100%' justifyContent='right' >
           <Stack direction='row' width='100%' justifyContent='flex-start' >
-            <Typography fontSize='20px' variant='subtitle2' sx={{fontFamily: 'Quicksand', fontWeight: 'bold'}}>{card.title}</Typography>
+            <Typography fontSize='20px' paddingLeft="20px" paddingTop="20px" variant='subtitle2' sx={{fontFamily: 'Quicksand', fontWeight: 'bold'}}>{card.title}</Typography>
           </Stack>
           <Stack width='20%' direction='row' justifyContent='space-between'>
             
@@ -41,12 +41,12 @@ export default function GenericCard(props:{
                 vertical: 'bottom',
                 horizontal: 'center',
               }}>
-              <Typography>{card.ind}</Typography>
+              <Typography paddingX="20px" paddingY="10px">{card.ind}</Typography>
             </Popover>
           </Stack>
         </Stack>
         <Stack justifyContent="center">
-            <img src={card.full_size_img} width="30%" alt="test"></img>
+            <img src={card.full_size_img} width="50%" alt="test"></img>
     </Stack>
         {card.children}
         <Stack direction='row' width='100%' justifyContent='center'>

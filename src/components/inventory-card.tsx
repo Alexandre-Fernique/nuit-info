@@ -8,14 +8,18 @@ export default function InventoryCard(props:{card:Card}){
   const {card} = props;
   const { openCard } = useContext(GameContext);
   return (
-    <Stack 
+    <Stack
       direction='column' 
       alignItems='center' 
       justifyContent='center'
       onClick={() => openCard(card)}
       sx={{
+          backgroundColor: '#f7f7f7',
+          padding: '10px',
+            borderRadius: '10px',
+            boxShadow: 5,
         '&: hover': {
-          transform: 'scale(1.03)',
+          transform: 'scale(1.1)',
           transition: 'transform .1s',
           cursor: 'pointer',
         },

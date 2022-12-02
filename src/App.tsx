@@ -8,7 +8,7 @@ import office from "./assets/office.png"
 import IllnessTokenList from './assets/liste_maladies_tokens.png'
 import desktop from "./assets/desktop.jpeg"
 import CardImg from './components/card-img';
-import { Button, Dialog, Grid, Stack } from '@mui/material';
+import {Button, Dialog, Grid, Modal, Paper, Stack, Typography} from '@mui/material';
 import Card from './models/card';
 import GameContext, { GameContextType } from './context/game-context';
 import Inventory from './components/inventory';
@@ -86,10 +86,35 @@ function App() {
   useEffect(() => {
     console.log(currentStep)
   }, [currentStep])
+  const [openFirstModal,setOpenFirstModal] = useState<boolean>(true);
+  const handleClose = () => {
+    setOpenFirstModal(false);
+
+  }
 
   return (
 
     <GameContext.Provider value={gameContext}>
+      <Modal
+          open={openFirstModal}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+      >
+
+              <Stack  padding="50px" direction='column' spacing='10px' sx={{backgroundColor:"white",border:'1.5px black solid', borderRadius:"5px", boxShadow: 5,top:"50%",left:"50%",transform: 'translate(-50%, -50%)', position:"absolute"}}>
+
+                        <Typography>
+                            Il est 18h45, une amie vous appelle en panique. La veille, elle a eu un rapport sexuel non protégée et a appris que sa partenaire, rencontrée la veille, avait une IST. Votre maman étant gynécologue, c’est vers vous qu’elle se tourne pour l’aider à savoir quoi faire, à savoir comment réagir à cette situation. Votre mère n’est pas là, mais vous savez que vous allez pouvoir l’aider car celle-ci détient toutes les réponses sur son ordinateur qui se trouve dans son bureau.
+
+                            Malheureusement votre mère est à la point de la technologie et a équipée tout son bureau d’automatisations, dont une qui verrouille automatiquement son bureau à 19h pile. Pour ne pas vous retrouver enfermé dedans, vous avez 15 minutes pour trouver les informations qu’il faut pour aider votre amie et sortir du bureau de votre mère. Alors, ne traînez pas, votre amie a besoin de vous !
+                    </Typography>
+
+            </Stack>
+
+
+
+      </Modal>
       {/* Card opened modal*/}
       {
         cardOpened &&( 
