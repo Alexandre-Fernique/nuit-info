@@ -1,7 +1,7 @@
 import { Paper, Stack, Typography, Button } from "@mui/material";
 import React from "react";
 import GameContext from "../context/game-context";
-import { computerWithoutPowerCard } from "../data/cards";
+import { computerWithoutPowerCard, definitionCard, chargerCard } from "../data/cards";
 import "../styles/card.css";
 
 export default function DrawerCard(props:{
@@ -14,11 +14,12 @@ export default function DrawerCard(props:{
   const isPresent : boolean = currentInventory.some((card) => card.num === list_card);
 
   const onSuccess = () => {
-    alert("Le tiroir s'ouvre ! C'est là que maman range son ordinateur !")
     moveToNextStep()
     const newInventory = currentInventory.filter((item) => item.num !== 5 && item.num !== 9)
     // TODO add card key and card memo 
     newInventory.push(computerWithoutPowerCard)
+    newInventory.push(definitionCard)
+    newInventory.push(chargerCard)
     setCurrentInventory(newInventory)
   }
 
@@ -28,7 +29,6 @@ export default function DrawerCard(props:{
         onSuccess();
         return 
       }
-      alert("Vous n'avez pas la carte nécessaire pour effectuer cette action");
     })
   }
   

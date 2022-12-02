@@ -17,6 +17,8 @@ import affiche from "../assets/affiche_img.png";
 import GameContext from "../context/game-context";
 import React from "react";
 import definitionImg from "../assets/definition.png"
+import CableMachine from "../components/CableMachine";
+
 
 //Simple cards
 const eiffelTowerCard = new Card(2, "Tour Eiffel", "Quel bel objet de décoration", "Indice 1", <div></div>, eiffel_tower);
@@ -42,6 +44,8 @@ const drawerCard = (<DrawerCard list_card={9} text="Ouvrir"/>)
 const drawerCardEntier = new Card(5, "Tiroir", "Un tiroir fermé à clef...", "La serrure est fermée, seul une clef peut l'ouvrir", drawerCard, drawer);
 const drawerComponent = (<GenericCard card={drawerCardEntier}/>)
 
+const chargerCard = new Card(14, "Chargeur", "Un chargeur qu'il faut débloquer", "Penser aux couleurs du mémo", <CableMachine/>, drawer);
+const chargerComponent = (<GenericCard card={drawerCardEntier}/>)
 
 const chestCard = new Card( 1, "Coffre", "Un coffre fermé avec un code", "Avez-vous bien regardé l'affiche ?",  <ChestCard/>, chestImg)
 
@@ -53,4 +57,4 @@ const IllenessTokenListImg = (<CardImg img_link='../assets/images/liste_maladies
 const IllenessTokenListCard = new Card(13, "Une liste d'IST", "Très insctructif ! Peut être est il possible d'en tirer davantage..", "Indice 1", IllenessTokenListImg, '../assets/images/liste_maladies_tokens.png');
 const IllenessTokenListComponent = (<GenericCard card={IllenessTokenListCard} />)
 
-export {IllenessTokenListCard, drawerCardEntier, computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
+export {IllenessTokenListCard, drawerCardEntier, chargerCard ,computerWithoutPowerCard, drawerCard, keyCard, memoCard, posterCard, postItCard, eiffelTowerCard, chestCard, computerOnCard, definitionCard}
