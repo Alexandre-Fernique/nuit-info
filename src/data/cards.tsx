@@ -39,7 +39,7 @@ const postItComponent = (<GenericCard card={postItCard}/>)
 const posterCard = new Card(4, "Affiche Informative", "Cette affiche nous donne pas mal d'information", "Mais quel mot forment ces lettres de couleurs", <div></div>, affiche);
 const posterComponent = (<GenericCard card={posterCard}/>)
 
-const memoCard = new Card(8, "Mémo", "https://www.sida-info-service.org/, \n https://www.sexualites-info-sante.fr/", "Fouillez les liens pour trouver des infos", <div></div>, memo);
+const memoCard = new Card(8, "Mémo", "Voici des liens utiles : https://www.sida-info-service.org/, \n https://www.sexualites-info-sante.fr/", "Fouillez les liens pour trouver des infos", <div></div>, memo);
 const memoComponent = (<GenericCard card={memoCard}/>)
 
 const keyCard = new Card(9, "Une clé", "", "Elle ouvre un tiroir...", <div></div>, key);
