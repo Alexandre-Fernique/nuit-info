@@ -6,13 +6,13 @@ import Screen from "./components/Screen";
 import room from "./assets/room.jpg"
 import CardImg from './components/card-img';
 import CardInput from './components/card-input';
-import { Dialog, Grid, Stack } from '@mui/material';
+import { Dialog, Stack } from '@mui/material';
 import Card from './models/card';
 import GameContext, { GameContextType } from './context/game-context';
-import {mockScenario} from './mocks/mockScenario';
-import { Scenario } from './types/scenario';
 import Inventory from './components/inventory';
 import PointOfInterest from './models/PointOfInterest';
+import GameTimer from './components/game-timer';
+import InventoryCard from './components/inventory-card';
 
 const compImg = (<CardImg img_link='https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/key.png'></CardImg>)
 const compInput = (<CardInput></CardInput>)
@@ -23,18 +23,30 @@ const component = (<GenericCard card={card1}/>)
 const component2 = (<GenericCard card={card2}/>)
 
 function App() {
-  const items: PointOfInterest[] = [{x: 20, y: 50, width: 100, height: 100, onClick:()=>{ alert("click")}}, {x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}]
+  const initialPointsOfInterest: PointOfInterest[] = [
+    {id: 1, x: 20, y: 50, width: 50, height: 50, onClick:()=>{ 
+      setPointsOfInterest((curPoints) => curPoints.filter((point) => point.id !== 1))
+      setCurrentInventory((curInv) => [...curInv, card1])
+      setCardOpened(card1);
+     }}, 
+    {id: 2, x: 50, y: 50, width: 100, height: 100,onClick:()=>{ alert("click")}}
+  ]
 
-  const [scenario, setScenario] = useState<Scenario>(mockScenario);
+  const [currentInventory, setCurrentInventory] = useState<Card[]>([]);
+  const [pointsOfInterest, setPointsOfInterest] = useState<PointOfInterest[]>(initialPointsOfInterest);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [cardOpened, setCardOpened] = useState<Card|undefined>(undefined);
+  const lastStep = 3;
 
   const gameContext = useMemo<GameContextType>(() => ({
-    scenario: undefined,
-    currentStep: 0,
+    currentInventory: currentInventory,
+    currentStep: currentStep,
+    pointsOfInterest: pointsOfInterest,
+    setCurrentInventory: setCurrentInventory,
+    setPointsOfInterest: setPointsOfInterest,
     openCard: (card:Card)=>setCardOpened(card),
     moveToNextStep: () => setCurrentStep((step) => step + 1)
-  }), []);
+  }), [currentInventory, currentStep, pointsOfInterest]);
 
   return (
 
@@ -47,15 +59,16 @@ function App() {
         </Dialog>)
       }
       <Stack direction='column' paddingX={10} paddingTop={2}>
-        {currentStep >= scenario.steps.length
+        <GameTimer durationInMinutes={15}></GameTimer>
+        {currentStep >= lastStep
         ?
           <div>
             Vous avez fini le jeu!
           </div>
           : 
           <Stack direction='column' spacing={2}>
-              <Screen items={items} url={room}></Screen>
-              <Inventory cards={scenario.steps[currentStep].cards}></Inventory>
+              <Screen items={pointsOfInterest} url={room}></Screen>
+              <Inventory cards={currentInventory}></Inventory>
             </Stack>
         }
       </Stack>
